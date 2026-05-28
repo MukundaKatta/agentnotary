@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentnotary"
+version = "0.1.0"
+description = "Tamper-evident, on-chain-verifiable attestations for AI agent action logs. keccak-256 Merkle root with sorted-pair (Solidity-compatible) proofs, plus optional EIP-191 signing. The core has zero dependencies and needs no key."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mukunda Rao Katta", email = "mukunda.vjcs6@gmail.com" }]
+keywords = [
+  "ai",
+  "agents",
+  "ethereum",
+  "web3",
+  "merkle",
+  "keccak",
+  "attestation",
+  "audit",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Security :: Cryptography",
+]
+dependencies = []
+
+[project.optional-dependencies]
+eth = ["eth-account>=0.10"]
+dashboard = ["streamlit>=1.40"]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.urls]
+Homepage = "https://github.com/MukundaKatta/agentnotary"
+Source = "https://github.com/MukundaKatta/agentnotary"
+Issues = "https://github.com/MukundaKatta/agentnotary/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentnotary"]
